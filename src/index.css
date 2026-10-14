@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+@layer utilities {
+  /* TikTok Effects & Animations */
+  @keyframes bassShake {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    10% { transform: translate(-3px, 2px) scale(1.02); }
+    20% { transform: translate(3px, -2px) scale(0.99); }
+    30% { transform: translate(-2px, -3px) scale(1.03); }
+    40% { transform: translate(2px, 3px) scale(1.01); }
+    50% { transform: translate(-1px, 2px) scale(1.02); }
+    60% { transform: translate(3px, 1px) scale(0.99); }
+    70% { transform: translate(-2px, -1px) scale(1.01); }
+    80% { transform: translate(2px, -2px) scale(1.02); }
+    90% { transform: translate(-1px, 2px) scale(1); }
+  }
+
+  @keyframes strobePulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.75; filter: brightness(1.4) contrast(1.2); }
+  }
+
+  @keyframes spinSlow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  @keyframes floatHeart {
+    0% { transform: translate(-50%, -50%) scale(0.3) rotate(0deg); opacity: 0; }
+    30% { transform: translate(-50%, -50%) scale(1.4) rotate(-12deg); opacity: 1; }
+    65% { transform: translate(-50%, -90px) scale(1.15) rotate(12deg); opacity: 0.9; }
+    100% { transform: translate(-50%, -170px) scale(0.8) rotate(0deg); opacity: 0; }
+  }
+
+  @keyframes glitchShift {
+    0%, 100% { clip-path: inset(0 0 0 0); transform: translate(0); }
+    20% { clip-path: inset(15% 0 65% 0); transform: translate(-5px, 2px); }
+    40% { clip-path: inset(45% 0 35% 0); transform: translate(5px, -2px); }
+    60% { clip-path: inset(75% 0 10% 0); transform: translate(-3px, 4px); }
+    80% { clip-path: inset(20% 0 50% 0); transform: translate(3px, -3px); }
+  }
+
+  @keyframes pulseGlow {
+    0%, 100% { box-shadow: 0 0 15px rgba(212, 175, 55, 0.3); }
+    50% { box-shadow: 0 0 30px rgba(212, 175, 55, 0.7); }
+  }
+
+  .animate-bass-shake {
+    animation: bassShake 0.45s ease-in-out infinite;
+  }
+
+  .animate-strobe-pulse {
+    animation: strobePulse 0.3s ease-in-out infinite;
+  }
+
+  .animate-spin-slow {
+    animation: spinSlow 3.8s linear infinite;
+  }
+
+  .animate-float-heart {
+    animation: floatHeart 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  }
+
+  .animate-glitch-shift {
+    animation: glitchShift 1.2s steps(2, start) infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulseGlow 2s infinite ease-in-out;
+  }
+
+  /* Scanlines for VHS */
+  .vhs-scanlines {
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.35) 50%);
+    background-size: 100% 4px;
+  }
+}
